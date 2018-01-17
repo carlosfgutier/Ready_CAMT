@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CAMT LogIn</title>
+	<!-- CSS -->
+	<link rel="stylesheet" href="assets/css/reset.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+	<!-- FONT -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+<body id="logInBody">
+	<div id="container">
+		
+		<section id="logInSection">
+			<div>
+				<h1 id="CAMT">CAMT</h1>
+				<input type="text" name="email" class="logInImput default-value" placeholder="username">
+				<input id="password-clear" type="text" name="password" class="logInImput" placeholder="password" autocomplete="off">
+				<input id="password-password" type="password" class="logInImput" name="password" value="" autocomplete="off" />
+				<button id="Go">Train</button>
+			</div>
+
+			<div>
+				<p id="invitation">Not having an account is not an excuse. 
+					<button id="signUp">Sign up</button> for full access or continue as a <a href="http://localhost:8080/profile">guest</a>.
+				</p>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+	  <!-- Modal content -->
+	  <div class="modal-content">
+	    <span class="close">&times;</span><br>
+
+	    <form id="signUpForm">
+	    	Username:<br>
+	    	<input id="nameInput" class="info" type="text" name="username" placeholder="Username" val="">
+  			<br>
+  			City:<br>
+  			<input id="cityInput" class="info" type="text" name="city" placeholder="City" val="">
+  			<br>
+  			Zipcode:<br>
+  			<input id="zipcodeInput" class="info" type="text" name="zipcode" placeholder="Zipcode" val="">
+  			<br>
+  			New Password:<br>
+  			<input id="password-clear1" type="text" value="" autocomplete="off" placeholder="Password"/>
+  			<input id="password-password1" class="info" type="password" name="password" placeholder="Password" val="" autocomplete="off">
+  			<br>
+  			Verify Password:<br>
+  			<input id="password-clear2" type="text" value="" autocomplete="off" placeholder="Password"/>
+  			<input id="password-password2" class="info" type="password" name="password" placeholder="Password" val="">
+  			<br>
+	    </form>
+	    <button id="modalSubmit">Submit</button>
+	    <p id="pleaseComplete">Please complete all fields</p>
+	  </div>
+
+	</div>
+	
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<!-- LogIn JS logic -->
+	<script>
+
+		$(document).ready(function() {
+			$("#pleaseComplete").hide();
+
+			$("#modalSubmit").on("click", function() {
+		      event.preventDefault();
+
+		    	if ($("#nameInput").val() != ""
+		    		&& $("#cityInput").val() != ""
+		    		&& $("#zipcodeInput").val() != ""
+		    		&& $("#password-password1").val() != ""
+		    		&& $("#password-password2").val() != "") {
+		    		
+		    		var newUser = {
+				        username: $("#nameInput").val(),
+				        password: $("#password-password1").val(),
+				        city: $("#cityInput").val(),
+				        zip: $("#zipcodeInput").val()
+			     	};
+			     	
+			     	$("#pleaseComplete").hide();
+
+			     	// POST USER INFO
+			   		$.post("/api/logIn", newUser, function(data) {
+			   			
+			   			// Redirect to profile 
+			     		window.location.href="http://localhost:8080/profile";
+			   		});
+			   		
+		    	} else {
+		    		$("#pleaseComplete").show();
+		    	}
+		    });
+
+		    // MODAL
+			var modal = document.getElementById('myModal');
+			var btn = document.getElementById("signUp");
+			var span = document.getElementsByClassName("close")[0]; 
+			btn.onclick = function() {
+			    modal.style.display = "block";
+			}
+
+			span.onclick = function() {
+			    modal.style.display = "none";
+			}
+
+			window.onclick = function(event) {
+			    if (event.target == modal) {
+			        modal.style.display = "none";
+			    }
+			}
+
+			//HIDES PASSWORD
+		    $('#password-clear1').show();
+			$('#password-password1').hide();
+
+			$('#password-clear1').focus(function() {
+			    $('#password-clear1').hide();
+			    $('#password-password1').show();
+			    $('#password-password1').focus();
+			});
+			$('#password-password1').blur(function() {
+			    if($('#password-password1').val() == '') {
+			        $('#password-clear1').show();
+			        $('#password-password1').hide();
+			    }
+			});
+
+			$('#password-clear2').show();
+			$('#password-password2').hide();
+
+			$('#password-clear2').focus(function() {
+			    $('#password-clear2').hide();
+			    $('#password-password2').show();
+			    $('#password-password2').focus();
+			});
+			$('#password-password2').blur(function() {
+			    if($('#password-password2').val() == '') {
+			        $('#password-clear2').show();
+			        $('#password-password2').hide();
+			    }
+			});
+	   	});
+	</script>
+</body>
+</html>

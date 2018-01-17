@@ -1,0 +1,308 @@
+body {
+	background-color: black;
+	font-family: 'Oswald', sans-serif;
+}
+
+#password-clear {
+    display: none;
+}
+
+#password-clear1 {
+    display: none;
+}
+
+#password-clear2 {
+    display: none;
+}
+
+/*RESPONSIVE CSS*/
+/*--------------------------------------------*/
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+	/*GENERAL CSS*/
+	/*--------------------------------------------*/
+	header {
+		text-align: center;
+	}
+
+	/*LOGIN SCREEN*/
+	/*--------------------------------------------*/
+  	#logInBody {
+		background-image: url(../images/gymLogIn.jpg);
+		background-repeat: no-repeat;
+    	background-attachment: fixed;
+    	bottom: 0;
+    	background-position: center bottom;
+		font-family: 'Oswald', sans-serif;
+	}
+
+	#container {
+		max-width: 100%;
+		background-color: black;
+	}
+
+	#logInSection {
+		background-color: black;
+		padding: 20px 20px 5px 20px;
+	}
+
+	.logInImput {
+		width: 300px;
+		height: 40px;
+		margin: 10px;
+		font-size: 30px;
+	}
+
+	#CAMT {
+		font-size: 80px;
+		font-family: 'Oswald', sans-serif;
+		color: white;
+		display: inline-block;
+	}
+
+	#signUp {
+		font-family: 'Oswald', sans-serif;
+		background-color: black;
+		color: white;
+		font-size: 29px;
+		border-color: black;
+		text-decoration: underline;
+	}
+
+	#Go {
+		font-family: 'Oswald', sans-serif;
+		font-size: 30px;
+		border-color: black;
+		border-radius: 20px;
+		padding: 0 20px;
+	}
+
+	#invitation {
+		font-family: 'Oswald', sans-serif;
+		font-size: 29px;
+		color: white;
+		margin-top: 35px;
+	}
+
+	#invitation a {
+		text-decoration: underline;
+		color: white;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	#password-clear {
+    display: none;
+	}
+
+	#password-clear1 {
+	    display: none;
+	}
+
+	#password-clear2 {
+	    display: none;
+	}
+
+	/*WORKOUT SCREENS*/
+	/*----------------------------------------------*/
+	#headerCheck {
+		width: 70px;
+		height: auto;
+		padding: 20px;
+	}
+
+	.singleWorkout {
+		background-color: rgba(255, 255, 255, 0.5);
+		font-family: 'Oswald', sans-serif;
+		font-size: 50px;
+		border-radius: 25px;
+		padding: 10px 0;
+		margin: 20px 10px 0 10px;
+	}
+
+	.singleWorkout:hover {
+		background-color: rgba(255, 255, 255, 0.32);
+	}
+
+	.doneButton {
+		font-family: 'Oswald', sans-serif;
+		font-size: 80%;
+		margin-left: 55%;
+		border-color: black;
+		border-radius: 20px;
+		padding: 0 20px;
+		position: relative;
+		bottom: 10px;
+	}
+
+	#doneButton:hover {
+		background-color: rgba(255, 255, 255, 0.32);
+	}
+
+	.dropdown-content {
+		font-family: 'Oswald', sans-serif;
+		font-size: 20px;
+		border-radius: 25px;
+		margin: 5px 10px 0 10px;
+	    background-color: #f9f9f9;
+	    min-width: 160px;
+	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	    text-align: center;
+	}
+
+	.dropdown-content p {
+		font-size: 25px;
+	    color: black;
+	    padding: 12px 16px;
+	    text-decoration: none;
+	    display: block;
+	    text-align: left;
+	}
+
+	.workoutImage {
+		width: 70px;
+		height: auto;
+	}
+
+	#mainNav {
+		background-color: black;
+		position: fixed;
+		bottom: 0;
+		left: 5px;
+		right: 5px;
+	}
+
+	.navIcon {
+		width: 70px;
+		height: auto;
+		padding: 10px 125px;
+	}
+
+	.bottomPadding {
+		margin-bottom: 100px;
+	}
+
+	.saveWorkout {
+		font-family: 'Oswald', sans-serif;
+		font-size: 30px;
+		border-color: black;
+		border-radius: 20px;
+		padding: 0 20px;
+		margin: 5px 5px;
+	}
+
+	/*PROFILE SCREEN*/
+	/*--------------------------------------------*/
+	.panel {
+		margin: auto;
+    	width: 50%;
+		height: auto;
+	}
+
+	#panelOne {
+		width: 100%;
+	}
+
+	#eventsButton {
+		font-size: 30px;
+		font-family: 'Oswald', sans-serif;
+		color: white;
+		margin: 0 50% 0 10%;
+	}
+
+	#settings {
+		width: 50px;
+		height: auto;
+		margin: 0 10% 0 10%;
+	}
+
+	#panelTwo {
+		text-align: center;
+	}
+
+	#profilePicture {
+		width: 400px;
+		height: auto;
+		border-radius: 50%;
+	}
+
+	#panelThree {
+		color: white;
+		font-family: 'Oswald', sans-serif;
+		font-size: 30px;
+		line-height: 55px;
+		text-align: center;
+	}
+
+
+	#profileInfo {
+		text-align: center;
+		background-color: white;
+		border-radius: 20px;
+		margin: 0 10px;
+	}
+
+	#profileInfo input {
+		font-family: 'Oswald', sans-serif;
+		font-size: 35px;
+		margin: 5px 0;
+		background-color: lightgray;
+		border-radius: 20px;
+	}
+
+	#submitInfo {
+		font-family: 'Oswald', sans-serif;
+		font-size: 40px;
+		margin: 5px 0;
+		color: white;
+		background-color: black;
+		border-radius: 20px;
+		padding: 0 15px;
+	}
+
+	/*MODAL*/
+	/*--------------------------------------------*/
+	/* The Modal (background) */
+	.modal {
+		font-family: 'Oswald', sans-serif;
+		font-size: 50px;
+	    display: none; /* Hidden by default */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Sit on top */
+	    left: 0;
+	    top: 0;
+	    width: 100%; /* Full width */
+	    height: 100%; /* Full height */
+	    overflow: auto; /* Enable scroll if needed */
+	    background-color: rgba(0, 0, 0, 0.69); /* Black w/ opacity */
+	    color: white;
+	    text-align: center;
+	}
+
+	/* Modal Content/Box */
+	.modal-content {
+	    background-color: rgba(0, 0, 0, 0.69);
+	    margin: 15% auto; /* 15% from the top and centered */
+	    padding: 20px;
+	    width: 80%; /* Could be more or less, depending on screen size */
+	}
+
+	.modal-content input {
+		font-size: 40px;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	#modalSubmit {
+		font-family: 'Oswald', sans-serif;
+		font-size: 30px;
+		border-color: black;
+		border-radius: 20px;
+		padding: 0 20px;
+	}
+}
